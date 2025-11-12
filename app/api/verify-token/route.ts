@@ -3,7 +3,7 @@ import { jwtVerify, createRemoteJWKSet } from 'jose';
 
 // Dynamic environment configuration
 const DYNAMIC_ENVIRONMENT_ID = '82cc6c53-aaf8-41f3-8796-72116b6cc710';
-const JWKS_URL = `https://auth.zurikai.com/api/v0/sdk/${DYNAMIC_ENVIRONMENT_ID}/.well-known/jwks`;
+const JWKS_URL = `https://auth.test.zurikai.com/api/v0/sdk/${DYNAMIC_ENVIRONMENT_ID}/.well-known/jwks`;
 
 interface DynamicJWTPayload {
   sub: string; // user ID
@@ -36,10 +36,10 @@ async function verifyDynamicJWT(token: string): Promise<{ valid: boolean; payloa
         'dynamic.xyz',
         'https://app.dynamic.xyz',
         'app.dynamic.xyz',
-        'auth.zurikai.com',
-        `https://auth.zurikai.com`,
-        `auth.zurikai.com/${DYNAMIC_ENVIRONMENT_ID}`,
-        `https://auth.zurikai.com/${DYNAMIC_ENVIRONMENT_ID}`
+        'auth.test.zurikai.com',
+        `https://auth.test.zurikai.com`,
+        `auth.test.zurikai.com/${DYNAMIC_ENVIRONMENT_ID}`,
+        `https://auth.test.zurikai.com/${DYNAMIC_ENVIRONMENT_ID}`
       ],
       audience: ['http://localhost:3000', 'https://localhost:3000', 'https://www.zurikai.com'], // Match the actual audience
     });
