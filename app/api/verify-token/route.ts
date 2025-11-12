@@ -139,18 +139,6 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString()
     });
 
-    // Set the Dynamic JWT token as cookie (matching cookie-auth approach)
-    const cookieOptions = {
-      httpOnly: process.env.NODE_ENV === 'production', // Secure in production
-      secure: process.env.NODE_ENV === 'production', // HTTPS only in production
-      sameSite: (process.env.NODE_ENV === 'production' ? 'strict' : 'lax') as 'strict' | 'lax',
-      maxAge: (verification.payload?.exp || Math.floor(Date.now() / 1000) + 86400) - Math.floor(Date.now() / 1000),
-      path: '/',
-      domain: process.env.NODE_ENV === 'production' ? '.zurikai.com' : undefined, // Allow subdomains in production
-    };
-    
-    response.cookies.set('DYNAMIC_JWT_TOKEN', token, cookieOptions);
-
     return response;
 
   } catch (error) {
