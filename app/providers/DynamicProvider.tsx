@@ -56,7 +56,7 @@ export function DynamicProvider({ children }: { children: React.ReactNode }) {
       <DynamicContextProvider
         settings={{
           environmentId: '82cc6c53-aaf8-41f3-8796-72116b6cc710',
-          apiBaseUrl: 'https://auth.zurikai.com/api/v0',
+          apiBaseUrl: 'https://auth.test.zurikai.com/api/v0',
           walletConnectors: [EthereumWalletConnectors, ZeroDevSmartWalletConnectors]
         }}
       >
