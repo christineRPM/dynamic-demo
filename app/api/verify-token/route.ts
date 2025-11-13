@@ -37,9 +37,9 @@ async function verifyDynamicJWT(token: string): Promise<{ valid: boolean; payloa
         'https://app.dynamic.xyz',
         'app.dynamic.xyz',
         'auth.test.zurikai.com',
-        `https://auth.test.zurikai.com`,
-        `auth.test.zurikai.com/${DYNAMIC_ENVIRONMENT_ID}`,
-        `https://auth.test.zurikai.com/${DYNAMIC_ENVIRONMENT_ID}`
+        `https://auth.zurikai.com`,
+        `auth.zurikai.com/${DYNAMIC_ENVIRONMENT_ID}`,
+        `https://auth.zurikai.com/${DYNAMIC_ENVIRONMENT_ID}`
       ],
       audience: ['http://localhost:3000', 'https://localhost:3000', 'https://www.zurikai.com'], // Match the actual audience
     });
