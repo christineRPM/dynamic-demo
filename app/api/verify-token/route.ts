@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { jwtVerify, createRemoteJWKSet } from 'jose';
 
 // Dynamic environment configuration
-const DYNAMIC_ENVIRONMENT_ID = '82cc6c53-aaf8-41f3-8796-72116b6cc710';
+const DYNAMIC_ENVIRONMENT_ID = '93d25bd6-9c1d-470e-8234-fbb34dc5a087';
 const JWKS_URL = `https://auth.test.zurikai.com/api/v0/sdk/${DYNAMIC_ENVIRONMENT_ID}/.well-known/jwks`;
 
 interface DynamicJWTPayload {
